@@ -3,6 +3,7 @@ logical OR operator '||'
 arithmatic operations
   - addition operation
   - subtraction operation
+  - expr command
   - bc utility to get floating point values
   - getting square root of a number using 'bc'
 array operations

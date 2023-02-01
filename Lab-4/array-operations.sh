@@ -1,7 +1,13 @@
-#!/bin/zsh
+#!/bin/bash
 
-array=$@
-echo $array[@]
+$@
 
-# Array index value
-echo ${#array[@]}
+# Prints all the values at once
+echo $@
+
+# Prints the total count of values provided
+echo $#
+
+# Prints the index of all the values
+echo $!{@}
+
