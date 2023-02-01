@@ -11,3 +11,4 @@ echo $#
 # Prints the index of all the values
 echo $!{@}
 
+echo $$
