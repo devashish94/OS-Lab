@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-array=${array[0]} ${array[1]} ${array[2]}
-# echo ${array[2]}
+array=$@
+echo $array[@]
 
 # Array index value
-echo ${!array[0]}
+echo ${#array[@]}
