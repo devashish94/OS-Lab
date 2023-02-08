@@ -1,14 +1,19 @@
 #!/bin/bash
 
-$@
+args=$@
 
 # Prints all the values at once
-echo $@
+echo "Arguments: $args"
 
 # Prints the total count of values provided
-echo $#
+echo "Count: $#"
 
 # Prints the index of all the values
-echo $!{@}
-
-echo $$
+echo -n "Indices: "
+i=1
+for arg in $@
+do 
+	echo -n "$i "
+	i=$((i + 1))
+done
+echo
