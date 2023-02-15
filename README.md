@@ -1,11 +1,11 @@
 # OS Lab
 
-**Lab-1** \
-	- Introduction to Linux Terminal Commands \
+**Lab-1**<br>
+	- Introduction to Linux Terminal Commands<br>
 
-**Lab-2** \ 
-	- Introduction to Bash Scripting \
-**Lab-3** \
+**Lab-2**<br>
+	- Introduction to Bash Scripting<br>
+**Lab-3**<br>
 	- Conditionals in Bash Scripting \
 
 **Lab-4** \ 
