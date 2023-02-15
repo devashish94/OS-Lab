@@ -10,8 +10,8 @@
 	- Conditionals in Bash Scripting<br>
 
 **Lab-4**<br>
-	*logical AND operator '&'<br>
-	*logical OR operator '||'<br>
+	* logical AND operator '&'<br>
+	* logical OR operator '||'<br>
 	- addition operation<br>
         - subtraction operation<br>
 	- expr command<br>
