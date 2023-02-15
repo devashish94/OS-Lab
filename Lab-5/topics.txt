@@ -1,3 +1,0 @@
-for loop
-while loop
-nested for loop OR while loop (anyone of them)

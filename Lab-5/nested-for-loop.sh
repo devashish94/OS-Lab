@@ -11,11 +11,12 @@ read col
 for (( i=1 ; i <= row ; i++ )) do
     for (( j=1 ; j <= col ; j++ )) do
         read x
-        array[$i,$j]=$x
+	array[$i,$j]=$x
     done
 done
 
 # Printing values from 2D Array
+echo "The 2D Array is: "
 for (( i=1 ; i <= row ; i++ )) do
     for (( j=1 ; j <= col ; j++ )) do
         echo -n "${array[$i,$j]} "
