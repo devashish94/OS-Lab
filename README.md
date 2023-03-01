@@ -30,3 +30,12 @@
 	- write a program using open system call to read first 10 character of existing file and print them on the screen<br>
 	- write a program to dup system call both Auto and User-Defined<br> 
 
+**Lab-7**<br> 
+	- simple fork <br>
+	- assign different jobs to child and parent processes <br>
+	- orphan process <br>
+	- zombie process <br>
+
+**Lab-8**<br> 
+	- pipe for communication between parent and child processes <br>
+
