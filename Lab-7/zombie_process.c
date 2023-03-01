@@ -5,10 +5,11 @@
 int main() {
     int child = fork();
     if (child == 0) {
-        printf("i am child");
+        printf("i am child\n");
         return 0;
     } else {
-        sleep(50);
+        sleep(5);
+        execl("/bin/ps", "ps", NULL);
         printf("i am parent\n");
     }
 }
