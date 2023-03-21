@@ -14,6 +14,8 @@ void calculation(int* process_id, int* arrival_time, int* burst_time, int length
     turn_around_time[0] = burst_time[0];
     waiting_time[0] = 0;
 
+    printf("+------------------------------------------+\n");
+
     /* Filling all the three Arrays using a single loop. Could have not used even a single array. */
     for (int i = 0; i < length; i++) {
         if (i > 0) {
@@ -25,8 +27,10 @@ void calculation(int* process_id, int* arrival_time, int* burst_time, int length
         total_waiting_time += waiting_time[i];
 
         /* Printing all the values in a tabular form */
-        printf("PID: %d\tAT:%d\tBT:%d\tCT:%d\tTAT:%d\tBT:%d\n", i, arrival_time[i], burst_time[i], completion_time[i], turn_around_time[i], waiting_time[i]);
+        printf("PID:%d\tAT:%d\tBT:%d\tCT:%d\tTAT:%d\tBT:%d\n", i, arrival_time[i], burst_time[i], completion_time[i], turn_around_time[i], waiting_time[i]);
     }
+
+    printf("+------------------------------------------+\n");
 
     /* Calculating the Averages of Both of TAT and WT */
     float average_TAT = (float) total_turn_around_time / length;
