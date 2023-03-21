@@ -1,7 +1,7 @@
 /* Write a program in C to implement First Come First Serve CPU Scheduling Algorithm */
 #include <stdio.h>
 
-void calculation(int* process_id, int* arrival_time, int* burst_time, int length) {
+void calculation(int* arrival_time, int* burst_time, int length) {
     printf("Number of Processes: %d\n", length);
 
     int total_turn_around_time = 0;
@@ -42,9 +42,9 @@ void calculation(int* process_id, int* arrival_time, int* burst_time, int length
 }
 
 int main() {
-    int process_id[] = {0, 1, 2}; // this array should be in increasing order
+    int process_id[] = {0, 1, 2}; // this array should be in increasing order to get the desired output
     int arrival_time[] = {0, 1, 2};
     int burst_time[] = {3, 2, 1};
     int length = *(&burst_time + 1) - burst_time; // length of array using pointer arithmetic
-    calculation(process_id, arrival_time, burst_time, length);
+    calculation(arrival_time, burst_time, length);
 }
