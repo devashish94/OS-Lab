@@ -37,5 +37,12 @@
 	- zombie process <br>
 
 **Lab-8**<br> 
-	- pipe for communication between parent and child processes <br>
-
+    CPU Scheduling:<br>
+        Write a program in C to implement first come first serve to calculate the average waiting time and average turn around time of the following processes.<br>
+            - array of PID<br>
+            - array of burst time<br>
+            - 2 array for WT and TAT<br>
+            - 2 variables, TWT = 0 (total waiting time), TTAT  = 0 (total turn around time)<br>
+            - T.C. and S.C. is important in such types of algorithms<br>
+            - use forumulas learnt in class to reduce the T.C. of the program<br>
+            
