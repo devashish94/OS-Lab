@@ -25,15 +25,7 @@ void calculation(int* process_id, int* arrival_time, int* burst_time, int length
         total_waiting_time += waiting_time[i];
 
         /* Printing all the values in a tabular form */
-        printf(
-            "PID: %d\tAT:%d\tBT:%d\tCT:%d\tTAT:%d\tBT:%d\n",
-            i,
-            arrival_time[i], 
-            burst_time[i], 
-            completion_time[i],
-            turn_around_time[i],
-            waiting_time[i]
-        );
+        printf("PID: %d\tAT:%d\tBT:%d\tCT:%d\tTAT:%d\tBT:%d\n", i, arrival_time[i], burst_time[i], completion_time[i], turn_around_time[i], waiting_time[i]);
     }
 
     /* Calculating the Averages of Both of TAT and WT */
