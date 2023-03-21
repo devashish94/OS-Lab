@@ -36,8 +36,7 @@
 	- orphan process <br>
 	- zombie process <br>
 
-**Lab-8**<br> 
-    CPU Scheduling:<br>
+**Lab-8** CPU Scheduling:<br>
         Write a program in C to implement first come first serve to calculate the average waiting time and average turn around time of the following processes.<br>
             - array of PID<br>
             - array of burst time<br>
