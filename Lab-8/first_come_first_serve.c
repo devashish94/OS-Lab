@@ -1,3 +1,4 @@
+/* Write a program in C to implement First Come First Serve CPU Scheduling Algorithm */
 #include <stdio.h>
 
 void calculation(int* process_id, int* arrival_time, int* burst_time, int length) {
