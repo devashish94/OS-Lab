@@ -1,4 +1,4 @@
-/* Implement Shortest Job CPU Scheduling Algorithm */
+/* Implement Shortest Job First CPU Scheduling Algorithm */
 #include <stdio.h>
 
 typedef struct {
@@ -118,7 +118,7 @@ void shortest_job_first_algorithm(Process process_list[], size_t length) {
         sortByBurstTime(process_list, length);
     }
     sortbyPID(process_list, length); // rearrange the PID to original order
-    printTable(process_list, length); // print the table after all the calculation
+    printTable(process_list, length); // print the table after all the calculations
     
     // calculating the average TAT and WT
     float average_TAT = (float) total_turn_around_time / length;
