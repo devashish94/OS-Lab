@@ -50,7 +50,7 @@
 - <b>Given</b>: Arrays for PID, Arrival Time and Burst Time
 
 **Lab: 10** Remaining CPU Scheduling Algorithms
-- Shortest Job First Algorithm
+- Shortest Remaining Job Algorithm
 - Priority Scheduling (Pre-emptive)
 - Priority Scheduling (Non Pre-emptive)
 - Round Robin
