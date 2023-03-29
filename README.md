@@ -48,3 +48,9 @@
 **Lab: 9** Shortest Job First Algorithm (Non-Preemptive)
 - Print the Average Turn Around Time and Average Waiting Time
 - <b>Given</b>: Arrays for PID, Arrival Time and Burst Time
+
+**Lab: 10** Remaining CPU Scheduling Algorithms
+- Shortest Job First Algorithm
+- Priority Scheduling (Pre-emptive)
+- Priority Scheduling (Non Pre-emptive)
+- Round Robin
