@@ -13,10 +13,13 @@ typedef struct {
 void printList(Process process_list[], size_t length) {
     for(int i = 0; i < length; i++) {
         printf(
-            "PID:\t%d\tAT:\t%d\tBT:\t%d\n", 
+            "PID:\t%d\tAT:\t%d\tBT:\t%d\tCT:\t%d\tTAT:\t%d\tWT:\t%d\n", 
             process_list[i].pid, 
             process_list[i].arrival_time, 
-            process_list[i].burst_time
+            process_list[i].burst_time,
+            process_list[i].completion_time,
+            process_list[i].turn_around_time,
+            process_list[i].waiting_time
         );       
     }
 }
@@ -27,31 +30,31 @@ void fill_temp_burst(Process process_list[], size_t length) {
     }
 }
 
-int find_min_time(Process process_list[], size_t length) {
-    int min = process_list[0].arrival_time;
+Process* shortest_job(Process process_list[], size_t length, int time) {
+    // find out the number of processes  with arrival time <= time
+    int count = 0;
     for (int i = 0; i < length; i++) {
-        if (process_list[i].arrival_time < min) {
-            min = process_list[i].arrival_time;
+        if (process_list[i].arrival_time <= time) {
+            count++;
         }
     }
-    return min;
-}
 
-Process earliest_job(Process process_list[], size_t length) {
-    Process min = process_list[0];
-    for (int i = 0; i < length; i++) {
-        if (process_list[i].arrival_time < min.arrival_time) {
-            min = process_list[i];
+    Process* arr[count];
+
+    // put them inside an array
+    int i = 0;
+    for (int j = 0; j < length; j++) {
+        if (process_list[j].arrival_time <= time) {
+            arr[i] = &process_list[j]; 
+            i++;
         }
     }
-    return min;
-}
 
-Process shortest_job(Process process_list[], size_t length, int time) {
-    Process min = earliest_job(process_list, length);
-    for (int i = 0; i < length; i++) {
-        if (process_list[i].burst_time < min.burst_time && process_list[i].arrival_time < time) {
-            min = process_list[i];
+    // find the process with the least burst time from them
+    Process* min = arr[0];
+    for (int x = 0; x < count; x++) {
+        if (arr[x]->temp_burst < min->temp_burst) {
+            min = arr[x];
         }
     }
     return min;
@@ -61,30 +64,23 @@ void shortest_remaining_time(Process process_list[], size_t length) {
     fill_temp_burst(process_list, length); // fill the temp burst time variable with the burst time
 
     int jobs = 0;
-    int time = 0;
+    int time = 1;
 
     while (jobs <= length) {
-        Process shortest_process = shortest_job(process_list, length, time);
-        if (shortest_process.arrival_time <= time) {
-            printf("time: %d", time);
-            printf("outside, at: %d\n", shortest_process.arrival_time);
-            if (shortest_process.burst_time > 0 && shortest_process.burst_time != 69) {
-                printf("upper inner\n");
-                shortest_process.burst_time--;
-                printf("PID: %d\tBT: %d\n", shortest_process.pid, shortest_process.burst_time);
-            }
-            if (shortest_process.burst_time == 0) {
-                printf("lower inner\n");
-                shortest_process.burst_time = 69; // FIGURE OUT THE INFINITE LOOP
-                jobs++;
-                break;
-            }
-        }
+        Process* shortest_process = shortest_job(process_list, length, time);
+        
+        shortest_process->temp_burst--;
 
-        // printList(process_list, length);
-        printf("jobs: %d\n", jobs);
+        if (shortest_process->temp_burst == 0) {
+            shortest_process->temp_burst = 999;
+            shortest_process->completion_time = time;
+            shortest_process->turn_around_time = time - shortest_process->arrival_time;
+            shortest_process->waiting_time = shortest_process->turn_around_time - shortest_process->burst_time;
+            jobs++;
+        }
         time++;
     }
+    printList(process_list, length);
 }
 
 int main() {
